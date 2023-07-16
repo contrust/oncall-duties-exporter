@@ -47,10 +47,9 @@ def update_duty_metric(duty_metric: prometheus_client.metrics.Gauge,
     while update_retries_amount <= update_retries_max_amount:
         if update_retries_amount != 0:
             logging.debug(f"Sleeping for {update_retry_time_in_seconds} seconds before "
-                          f"trying get the duty metric from {oncall_host} again.")
+                          f"trying get the duty metric from {oncall_host} again, "
+                          f"{update_retries_max_amount - update_retries_amount + 1} attempts remaining.")
             time.sleep(update_retry_time_in_seconds)
-            logging.debug(f"Trying to update the duty metric again from {oncall_host}. "
-                          f"{update_retries_max_amount - update_retries_amount} attempts remaining.")
         is_duty_metric_updated = try_update_duty_metric(duty_metric, oncall_host, requests_timeout_in_seconds, is_https)
         if is_duty_metric_updated:
             break
