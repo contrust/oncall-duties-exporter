@@ -31,7 +31,7 @@ def parse_arguments():
         type=int,
         default=DEFAULT_UPDATE_RETRIES_MAX_AMOUNT,
         help='the number of times the app tries to get metrics again after a request error, '
-             '5 by default.'
+             f'{DEFAULT_UPDATE_RETRIES_MAX_AMOUNT} by default.'
     )
 
     parser.add_argument(
@@ -39,7 +39,7 @@ def parse_arguments():
         type=float,
         default=DEFAULT_UPDATE_RETRY_TIME_IN_SECONDS,
         help='the time in seconds the app is sleeping before trying to get metrics again after a request error, '
-             '60 by default.'
+             f'{DEFAULT_UPDATE_RETRY_TIME_IN_SECONDS} by default.'
     )
 
     parser.add_argument(
@@ -47,7 +47,7 @@ def parse_arguments():
         type=float,
         default=DEFAULT_REQUEST_TIMEOUT_IN_SECONDS,
         help='the timeout in seconds of a request to an oncall api, '
-             '5 by default.'
+             f'{DEFAULT_REQUEST_TIMEOUT_IN_SECONDS} by default.'
     )
 
     parser.add_argument(
@@ -55,7 +55,7 @@ def parse_arguments():
         type=float,
         default=DEFAULT_METRICS_UPDATE_TIME_IN_SECONDS,
         help='the time in seconds after the app is trying to update metrics, '
-             '3600 by default'
+             f'{DEFAULT_METRICS_UPDATE_TIME_IN_SECONDS} by default'
     )
 
     parser.add_argument(
