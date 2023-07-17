@@ -55,7 +55,7 @@ def parse_arguments():
         type=float,
         default=DEFAULT_METRICS_UPDATE_TIME_IN_SECONDS,
         help='the time in seconds after the app is trying to update metrics, '
-             '86400 by default'
+             '3600 by default'
     )
 
     parser.add_argument(
