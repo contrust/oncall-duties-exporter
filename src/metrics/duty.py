@@ -33,6 +33,9 @@ def try_update_duty_metric(duty_metric: prometheus_client.metrics.Gauge,
         if current_team_summary is not None:
             duty_metric.labels(team, "primary").set("primary" in current_team_summary)
             duty_metric.labels(team, "secondary").set("secondary" in current_team_summary)
+        else:
+            logging.error(f"The summary of the {team} team from {oncall_host} doesn't contain a 'current' field.")
+            return False
     return True
 
 
