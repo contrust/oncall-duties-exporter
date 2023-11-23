@@ -1,7 +1,7 @@
 # Oncall duties exporter
 A custom prometheus exporter for the oncall app https://github.com/contrust/oncall, which allows to figure out if there's currently a person with a certain role in a team.
 # Metrics format
-duty{role=["primary" | "secondary"], team=team_name} [0.0, 1.0]
+duty{role=["primary" | "secondary"], team=team_name} [0.0 | 1.0]
 # Usage
 ```sh
 python3 main.py [-h] [--https] [--update-retries-max-amount UPDATE_RETRIES_MAX_AMOUNT]
